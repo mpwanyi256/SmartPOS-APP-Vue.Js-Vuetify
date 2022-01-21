@@ -1,0 +1,15 @@
+@import './constants.scss';
+
+html {
+    overflow-y: unset;
+}
+
+body {
+    font-family: $font-style !important;
+    background-color: $body-bg !important;
+    font-size: 14px;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+}

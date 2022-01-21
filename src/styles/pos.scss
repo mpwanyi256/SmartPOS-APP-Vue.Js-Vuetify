@@ -1,0 +1,89 @@
+$bg_color: #d8dfe2;
+$blue: #337ab7;
+$white: white;
+$font-style: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+$black-text: #1d1d1f;
+$header: #d8dfe2;
+$scrollbar-color: #696969;
+$white: white;
+$black: #0b0d0e;
+$yellow: #000;
+$red: #ff2f56;
+$green: rgb(47, 119, 47);
+$accent: #31a3dd;
+$primary: #0b0d0e;
+$secondary: #444F54;
+$tertiary: #72838C;
+$quaternary: #E2E6E8;
+$border: $quaternary;
+$error: #ef2d56;
+$success: #09b66d;
+$warning: #f5c023;
+// Highlight colors
+$accent-highlight: #D6EDF8;
+$primary-highlight: #F0F2F3;
+$error-highlight: #FFDAE2;
+$success-highlight: #CEF0E2;
+$warning-highlight: #FDF2D3;
+// Container colors
+$accent-container: #EFF8FC;
+$primary-container: #F6F6F6;
+$error-container: #FFEFF2;
+$success-container: #EBF9F3;
+$warning-container: #FEFAED;
+// Other colors
+$violet: #8B02D3;
+$orange: #F4A259;
+$pink: #ED64A6;
+$teal: #38B2AC;
+$indigo: #667EEA;
+$brown: #964B00;
+$violet-highlight: #E8CCF6;
+$orange-highlight: #FDECDE;
+$pink-highlight: #FBE0ED;
+$teal-highlight: #D7F0EE;
+$indigo-highlight: #E0E5FB;
+$brown-highlight: #EADBCC;
+$violet-container: #FAF5FD;
+$orange-container: #FEF7F2;
+$pink-container: #FDF3F8;
+$teal-container: #EFF9F8;
+$indigo-container: #F3F5FD;
+$brown-container: #F7F1EB;
+
+
+// elevation (broad)
+$elevation-low: 0px 0px 1px rgba($black, 0.1), 0px 2px 4px rgba($black, 0.13);
+$elevation-mid: 0px 0px 2px rgba($black, 0.1), 0px 4px 8px rgba($black, 0.13);
+$elevation-high: 0px 1px 4px rgba($black, 0.1), 0px 8px 16px rgba($black, 0.13);
+$elevation-mid-high: 0px 2px 8px rgba($black, 0.1), 0px 16px 24px rgba($black, 0.13);
+$elevation-very-high: 0px 4px 16px rgba($black, 0.18), 0px 24px 64px rgba($black, 0.22);
+$elevation-modal: $elevation-very-high;
+$elevation-blue-low: 0px 0px 1px rgba($blue, 0.3), 0px 2px 4px rgba($blue, 0.39);
+$elevation-blue-mid: 0px 0px 2px rgba($blue, 0.3), 0px 4px 8px rgba($blue, 0.39);
+$elevation-blue-high: 0px 1px 4px rgba($blue, 0.3), 0px 8px 16px rgba($blue, 0.39);
+$elevation-blue-very-high: 0px 4px 16px rgba($blue, 0.54), 0px 24px 64px rgba($blue, 0.66);
+$elevation-red-low: 0px 0px 1px rgba($red, 0.3), 0px 2px 4px rgba($red, 0.39);
+$elevation-red-mid: 0px 0px 2px rgba($red, 0.3), 0px 4px 8px rgba($red, 0.39);
+$elevation-red-high: 0px 1px 4px rgba($red, 0.3), 0px 8px 16px rgba($red, 0.39);
+$elevation-red-very-high: 0px 4px 16px rgba($red, 0.54), 0px 24px 64px rgba($red, 0.66);
+$elevation-green-low: 0px 0px 1px rgba($green, 0.3), 0px 2px 4px rgba($green, 0.39);
+$elevation-green-mid: 0px 0px 2px rgba($green, 0.3), 0px 4px 8px rgba($green, 0.39);
+$elevation-green-high: 0px 1px 4px rgba($green, 0.3), 0px 8px 16px rgba($green, 0.39);
+$elevation-green-very-high: 0px 4px 16px rgba($green, 0.54), 0px 24px 64px rgba($green, 0.66);
+$elevation-yellow-low: 0px 0px 1px rgba($yellow, 0.3), 0px 2px 4px rgba($yellow, 0.39);
+$elevation-yellow-mid: 0px 0px 2px rgba($yellow, 0.3), 0px 4px 8px rgba($yellow, 0.39);
+$elevation-yellow-high: 0px 1px 4px rgba($yellow, 0.3), 0px 8px 16px rgba($yellow, 0.39);
+$elevation-yellow-very-high: 0px 4px 16px rgba($yellow, 0.54), 0px 24px 64px rgba($yellow, 0.66);
+
+// elevation (common) (use these for cards, and dropdowns)
+$elevation-default: $elevation-low;
+$elevation-hover: $elevation-mid;
+$elevation-blue-default: $elevation-blue-low;
+$elevation-blue-hover: $elevation-blue-mid;
+$elevation-red-default: $elevation-red-low;
+$eleavtion-red-hover: $elevation-red-mid;
+$elevation-green-default: $elevation-green-low;
+$elevation-green-hover: $elevation-green-mid;
+$elevation-yellow-default: $elevation-yellow-low;
+$elevation-yellow-hover: $elevation-yellow-mid;

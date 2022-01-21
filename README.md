@@ -1,4 +1,4 @@
-# pos-app
+# Smart POS APP (Web App :: Vue.Js & Vuetify)
 
 ## Project setup
 ```
