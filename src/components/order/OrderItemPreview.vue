@@ -13,7 +13,7 @@
             </span>
             <br>
             <span class="added_by">
-              <v-icon dark small v-if="orderItem.added_by">mdi-account</v-icon>
+              <v-icon dark small v-if="orderItem.added_by">mdi-account-check</v-icon>
               {{ orderItem.added_by ? `${orderItem.added_by}` : '' }}
             </span>
           </p>

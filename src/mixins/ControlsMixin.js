@@ -12,7 +12,8 @@ export default {
       allowWaiterCancelCODE: 'ALLWAITCANCEL',
       allowWaiterDeleteCODE: 'AWDIBS',
       allowManagerDeleteCODE: 'AMDIBS',
-      allowManagerViewSales: 'AAVSR'
+      allowManagerViewSales: 'AAVSR',
+      allowWaiterPrintBills: 'WAIPRBILL'
     }
   },
 

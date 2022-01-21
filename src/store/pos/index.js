@@ -9,9 +9,13 @@ export default {
   state: {
     sections: [],
     departments: [],
-    loading: false
+    loading: false,
+    runningOrder: null
   },
   mutations: {
+    setRunningOrder (state, order) {
+      state.runningOrder = order
+    },
     setDepartments (state, departments) {
       state.departments = departments
     },
@@ -137,6 +141,7 @@ export default {
   },
   getters: {
     sections: (state) => state.sections,
-    departments: (state) => state.departments
+    departments: (state) => state.departments,
+    runningOrder: (state) => state.runningOrder
   }
 }

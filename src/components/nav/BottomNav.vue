@@ -2,18 +2,23 @@
     <div class="nav">
         <v-bottom-navigation v-model="value">
             <v-btn :to="{ name: 'sections' }" value="tables">
-                <span>Tables</span>
+                <span>TABLES</span>
                 <v-icon>mdi-menu-open</v-icon>
             </v-btn>
 
             <v-btn @click="addItemsToOrder" value="addItems">
-                <span>Add Items</span>
-                <v-icon>mdi-silverware</v-icon>
+                <span>MENU</span>
+                <v-icon>mdi-silverware-variant</v-icon>
             </v-btn>
 
             <v-btn @click="confirmOrder" value="confirm">
-                <span>PRINT KOT</span>
-                <v-icon>mdi-printer</v-icon>
+              <span>KOT</span>
+              <v-icon>mdi-printer-outline</v-icon>
+            </v-btn>
+
+            <v-btn v-if="userCanPrintBill" @click="performBillPrint" value="confirm">
+              <span>BILL</span>
+              <v-icon>mdi-clipboard-list-outline</v-icon>
             </v-btn>
 
             <!-- <v-btn value="shift">
@@ -24,9 +29,13 @@
     </div>
 </template>
 <script>
+import ControlsMixin from '@/mixins/ControlsMixin'
+import PrintingMixin from '@/mixins/PrintingMixin'
 
 export default {
   name: 'BottomNav',
+
+  mixins: [ControlsMixin, PrintingMixin],
 
   data () {
     return {

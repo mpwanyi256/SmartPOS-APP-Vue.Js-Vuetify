@@ -124,6 +124,7 @@ export default {
   methods: {
     ...mapActions('pos', ['findOrder', 'getOrderItems', 'addItemToOrder']),
     ...mapMutations('notify', ['notify']),
+    ...mapMutations('pos', ['setRunningOrder']),
 
     addItemsToOrder () {
       this.addItems = true
@@ -165,6 +166,7 @@ export default {
       this.findOrder(this.$route.params.orderId)
         .then(response => {
           this.order = response.data.orders[0]
+          this.setRunningOrder(this.order)
           return this.getOrderItems(this.$route.params.orderId)
         })
         .then(items => {
