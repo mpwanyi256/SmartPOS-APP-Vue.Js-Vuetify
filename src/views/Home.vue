@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Navbar  v-if="currentPage !== 'order'" />
-    <div class="routes-view">
+    <Navbar />
+    <div :class="currentPage === 'order' ? 'routes-view-order' : 'routes-view-home'">
       <router-view></router-view>
       <v-snackbar
         v-model="snackbar" top
@@ -27,11 +27,14 @@
 <script>
 import Navbar from '@/components/nav/Navbar.vue'
 import BottomNav from '@/components/nav/BottomNav.vue'
+import dataSync from '@/mixins/dataSync'
 
-import { mapActions, mapGetters, mapMutations } from 'vuex'
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
 
 export default {
   name: 'Home',
+
+  mixins: [dataSync],
 
   components: {
     Navbar,
@@ -66,13 +69,18 @@ export default {
     }
   },
 
-  created () {
-    this.getOutletSettings()
+  async created () {
+    const CONTROLS = await this.getSynchedSettings().catch(e => [])
+    delete CONTROLS.data_key
+    this.addonItems = CONTROLS.controls
+    this.loading = false
+    this.setColtrols(CONTROLS)
   },
 
   methods: {
     ...mapMutations('notify', ['notify']),
     ...mapActions('settings', ['getOutletSettings']),
+    ...mapState('settings', ['setColtrols']),
 
     closeSnackBar () {
       this.notify('')
@@ -93,9 +101,15 @@ export default {
     font-size: 14px;
     font-family: $font-style !important;
 
-    .routes-view {
+    .routes-view-home {
       width: inherit;
       height: calc(100vh - 52px);
+      overflow: hidden;
+    }
+
+    .routes-view-order {
+      width: inherit;
+      height: calc(100vh - 104px);
       overflow: hidden;
     }
 

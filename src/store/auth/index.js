@@ -17,6 +17,9 @@ export default {
       {
         icon: 'mdi-cog', name: 'Settings', path: 'settings', allowedUsers: [5], packages: [1, 2, 3]
       }
+      // { // TO DO :: Add waiter's orders page
+      //   icon: 'mdi-account', name: 'My Orders', path: 'orders', allowedUsers: [5], packages: [1, 2, 3]
+      // }
     ]
   },
   mutations: {

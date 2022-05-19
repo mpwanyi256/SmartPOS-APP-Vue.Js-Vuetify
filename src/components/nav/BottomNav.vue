@@ -16,7 +16,7 @@
               <v-icon>mdi-printer-outline</v-icon>
             </v-btn>
 
-            <v-btn v-if="userCanPrintBill" @click="performBillPrint" value="confirm">
+            <v-btn v-if="userCanPrintBill" @click="checkBillPrint" value="confirm">
               <span>BILL</span>
               <v-icon>mdi-clipboard-list-outline</v-icon>
             </v-btn>
@@ -44,6 +44,10 @@ export default {
   },
 
   methods: {
+    checkBillPrint () {
+      this.$eventBus.$emit('perform-bill-print')
+    },
+
     addItemsToOrder () {
       this.$eventBus.$emit('add-items-to-order')
     },

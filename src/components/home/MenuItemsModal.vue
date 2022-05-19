@@ -1,5 +1,5 @@
 <template>
-    <Basemodal title="Menu items" @close="$emit('close')" :size="800">
+    <Basemodal :title="`${items.length} Menu items`" @close="$emit('close')" :size="800">
         <div class="menu_listing">
             <div class="search_area">
             <div class="search">

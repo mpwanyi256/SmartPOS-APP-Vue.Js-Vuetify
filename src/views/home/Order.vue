@@ -118,13 +118,22 @@ export default {
   eventBusCallbacks: {
     'add-items-to-order': 'addItemsToOrder',
     'confirm-kot-order': 'printKOT',
-    'reload-order': 'fetchOrderDetails'
+    'reload-order': 'fetchOrderDetails',
+    'perform-bill-print': 'runBillPrint'
   },
 
   methods: {
     ...mapActions('pos', ['findOrder', 'getOrderItems', 'addItemToOrder']),
     ...mapMutations('notify', ['notify']),
     ...mapMutations('pos', ['setRunningOrder']),
+
+    runBillPrint () {
+      if (this.hasPendingItems) {
+        this.notify('Please confirm pending items')
+        return
+      }
+      this.performBillPrint()
+    },
 
     addItemsToOrder () {
       this.addItems = true

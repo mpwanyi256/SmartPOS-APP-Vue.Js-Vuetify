@@ -151,10 +151,9 @@ export default {
   }
 
 .has-orders {
-  background-color: $header !important;
+  background-color: $light-gray !important;
   font-weight: bold;
   font-size: 12px;
-  border-bottom: 1px solid $border-color;
 
   span {
     color: $accent-color;

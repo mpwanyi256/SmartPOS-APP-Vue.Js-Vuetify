@@ -22,8 +22,8 @@ export default {
       const params = new FormData()
       params.append('get_access_controls', OUTLET)
       commit('loading', false)
-      const conts = await API.smart(PATH, params)
-      if (!conts.error) commit('setColtrols', conts.data)
+      return API.smart(PATH, params)
+      // if (!conts.error) commit('setColtrols', conts.data)
     }
   },
   getters: {

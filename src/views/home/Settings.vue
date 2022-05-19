@@ -29,9 +29,19 @@ export default {
     return {
       actions: [
         {
-          icon: 'mdi-cog',
+          icon: 'mdi-book-open-variant',
           name: 'Sync Menu Items',
           id: 1
+        },
+        {
+          icon: 'mdi-book-open-page-variant',
+          name: 'Sync Addon Items',
+          id: 2
+        },
+        {
+          icon: 'mdi-cog',
+          name: 'Sync POS Settings',
+          id: 3
         }
       ]
     }
@@ -43,6 +53,12 @@ export default {
       switch (ID) {
         case 1:
           this.syncMenuItems()
+          break
+        case 2:
+          this.syncAddonItems()
+          break
+        case 3:
+          this.syncOutletSettings()
           break
       }
     }

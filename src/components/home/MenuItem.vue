@@ -19,7 +19,7 @@ export default {
 @import '@/styles/constants.scss';
 
 .menu_item {
-  height: 75px;
+  min-height: 75px;
   width: 100%;
   display: flex;
   flex-direction: column;

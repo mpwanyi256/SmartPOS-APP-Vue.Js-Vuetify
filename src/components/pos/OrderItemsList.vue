@@ -1,7 +1,7 @@
 <template>
     <Basemodal
       :title="`(${itemsLength}) ${item.item_name}`"
-      size="100%" @close="$emit('close')">
+      :size="700" @close="$emit('close')">
         <div class="menu_items">
           <OrderItemPreview
             v-for="item in orderItemsList"
@@ -49,12 +49,10 @@ export default {
 
   methods: {
     ...mapActions('pos', ['getOrderItems', 'updateRunningOrder', 'addItemToOrder']),
-    // ...mapActions('pos', ['updateRunningOrder']),
 
     async addItemNote (note) {
       await this.updateRunningOrder(note)
       await this.fetchOrderItems()
-      this.$eventBus.$emit('reload-order')
     },
 
     cancelOrderItem (item) {

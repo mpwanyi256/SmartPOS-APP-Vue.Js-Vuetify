@@ -91,7 +91,6 @@ export default {
       }
       this.sendPrintJob(bill)
         .then((res) => {
-          console.log('Print response', res)
           if (res.printed) {
             this.confirmOrder({ update_bill_print_status: this.order.order_id })
               .then((res) => {

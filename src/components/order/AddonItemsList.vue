@@ -28,14 +28,15 @@
     </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
 import MenuItem from '@/components/menu/MenuItem.vue'
 import LoadingKds from '@/components/generics/LoadingKds.vue'
 import BaseTextfield from '@/components/generics/BaseTextfield.vue'
 import AddonEntryModal from '@/components/order/addons/AddonEntryModal.vue'
+import dataSyncMixin from '@/mixins/dataSync'
 
 export default {
   name: 'AddonItemsList',
+  mixins: [dataSyncMixin],
   components: {
     MenuItem,
     LoadingKds,
@@ -72,7 +73,6 @@ export default {
   },
 
   methods: {
-    ...mapActions('pos', ['getAddonItems']),
 
     refetchAddons () {
       this.openAddonentrymodal = false
@@ -80,16 +80,11 @@ export default {
       this.$eventBus.$emit('reload-item-addons')
     },
 
-    fetchAddons () {
-      this.getAddonItems()
-        .then(addOns => {
-          if (!addOns.error) this.addonItems = addOns.data
-        })
-        .catch(e => {
-          console.log('Error while fetching addons', e)
-        }).finally(() => {
-          this.loading = false
-        })
+    async fetchAddons () {
+      const ADDONS = await this.getSyncedAddonItems().catch(e => [])
+      delete ADDONS.data_key
+      this.addonItems = ADDONS.items
+      this.loading = false
     },
 
     addToOrderItem (addonItem) {

@@ -93,8 +93,8 @@ export default {
     },
 
     waiterCanPrintBill () {
-      const allWait = this.getSetting('WAIPRBILL')
-      return (this.userRole === 3 && allWait.status)
+      // const allWait = this.getSetting('WAIPRBILL')
+      return true // (this.userRole === 3 && allWait.status)
     },
 
     userCanPrintBill () {
